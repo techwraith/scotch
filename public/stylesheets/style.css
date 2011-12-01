@@ -1,0 +1,45 @@
+body {
+  margin: 60px 0;
+}
+
+pre code {
+  background: none;
+  line-height: 1.5;
+}
+
+img {
+  box-shadow: 0 0 5px #333;
+}
+
+img.avatar {
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+
+.blogTitle {
+  line-height: 1;
+  margin-top: 10px;
+}
+
+.blogSubTitle {
+  line-height: 1;
+  margin-top: -16px;
+  margin-bottom: 36px;
+}
+
+.post {
+  border-bottom: 1px solid #bebebe;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+}
+
+.footer {
+  margin-top: 20px;
+}
+
+a.next {
+  float: right;
+}
+a.previous {
+  float: left;
+}

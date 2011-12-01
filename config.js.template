@@ -1,0 +1,9 @@
+exports.blogTitle = "Blog Title";
+exports.blogSubTitle = "Blog Sub Title";
+exports.postsPerPage = 10;
+exports.author = {
+  name: "First Last"
+, description: "A bio goes here. Or something more interesting than a bio."
+, url: "http://example.com"
+, avatar: "http://example.com/image.png"
+}

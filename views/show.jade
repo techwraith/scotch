@@ -1,0 +1,14 @@
+div.row
+  div.span10
+    h1= title
+    h6 Posted by #{author.name} #{updatedAt}
+    #post!=content
+  div.span5.offset1
+    img.avatar(src=author.avatar)
+    h3
+      a(href=author.url)= author.name
+    p!= author.description
+    ul
+      - for link in author.links
+        li
+          a(href=link)=link

@@ -1,0 +1,4 @@
+posts/*
+!posts/example-post.md
+config.js
+node_modules/

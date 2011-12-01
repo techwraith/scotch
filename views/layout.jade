@@ -1,0 +1,14 @@
+!!!
+html
+  head
+    title= siteTitle
+    link(href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css", rel="stylesheet")
+    link(href="/stylesheets/style.css", rel="stylesheet")
+    script(type="text/javascript", src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js")
+  body
+    div.topbar
+      div.fill
+        div.container
+          a.brand(href="/")=siteTitle
+    div.container
+      div.content!= body
