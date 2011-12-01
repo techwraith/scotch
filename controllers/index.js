@@ -90,6 +90,21 @@ exports.post.index = function(req, res){
     // Do we have more posts after this page?
     more = !!((titles.length - ((limit * page) - limit)) > limit);
 
+    //
+    if (err || !titles || titles.length < 1) {
+        res.render('index', {
+          siteTitle: config.blogTitle
+        , siteSubTitle: config.blogSubTitle
+        , posts: []
+        , author: config.author
+        , more: more
+        , less: !!(page > 1)
+        , totalPosts: totalPosts
+        , nextPage: (page > 1) ? page+1 : 2
+        , previousPage: (page > 1) ? page-1 : 1
+        })
+    }
+
     // This isn't last page
     if (titles.length > limit * page) {
       titles.splice(0, (limit * page) - limit)
