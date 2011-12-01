@@ -5,6 +5,6 @@ exports.author = {
   name: "First Last"
 , description: "A bio goes here. Or something more interesting than a bio."
 , url: "http://example.com"
-, avatar: "http://placehold.it/400x300"
+, avatar: "http://placehold.it/280x210"
 , links: []
 }
