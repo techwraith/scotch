@@ -3,7 +3,7 @@ var reed = require('reed')
   , config = require("../config");
 
 // Start listening for posts in the posts directory
-reed.open("./posts");
+reed.open(__dirname + "/../posts");
 
 exports.post = {};
 
