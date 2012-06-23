@@ -18,20 +18,7 @@
 
 
 var router = new geddy.RegExpRouter();
-router.match('/').to({controller: 'Main', action: 'index'});
-
-// Basic routes
-// router.match('/moving/pictures/:id').to(
-//    {controller: 'Moving', action: 'pictures'});
-// router.match('/farewells/:farewelltype/kings/:kingid').to(
-//    {controller: 'Farewells', action: 'kings'});
-// Can also match specific HTTP methods only
-// router.match('/xandadu', 'get').to(
-//    {controller: 'Xandadu', action: 'specialHandler'});
-//
-// Resource-based routes
-// router.resource('hemispheres');
-
+router.match('/').to({controller: 'Posts', action: 'index'});
 router.resource('posts');
 router.match('/admin').to({controller: 'Admins', action: 'index'});
 router.match('/admin/login').to({controller: 'Admins', action: 'login'});
