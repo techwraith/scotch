@@ -1,0 +1,9 @@
+<% for (var p in posts) { %>
+  <% var post = posts[p]; %>
+  <div class="row">
+    <div class="span11 hero-unit" style="margin-bottom: 30px; padding: 40px;">
+      <h2><a href="<%='/posts/'+post.slug; %>" ><%= post.title; %></a></h2>
+      <div><%- post.html; %></div>
+    </div>
+  </div>
+<% } %>

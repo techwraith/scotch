@@ -1,0 +1,49 @@
+<%
+    var isUpdate = params.action == 'edit'
+      , formTitle = isUpdate ? 'Edit this Post' : 'Create a new Post'
+      , action = isUpdate ? '/posts/' + post.slug + '?_method=PUT' : '/posts'
+      , deleteAction = isUpdate ? '/posts/' + post.slug + '?_method=DELETE' : ''
+      , title = isUpdate ? post.title : ''
+      , content = isUpdate ? post.content : ''
+      , date = isUpdate ? post.date : ''
+      , errors = params.errors;
+  %>
+  <form id="post-form" class="form-horizontal" action="<%= action %>" method="POST">
+    <fieldset>
+      <legend><%= formTitle %></legend>
+      <div class="control-group">
+        <label for="title" class="control-label">Title</label>
+        <div class="controls">
+          <input type="text" class="span6" placeholder="post title" name="title" value='<%= title; %>'/>
+        </div>
+      </div>
+      <div class="control-group">
+        <label for="date" class="control-label">Date</label>
+        <div class="controls">
+          <input type="text" class="span6" placeholder="publish date" name="date" value='<%= date; %>'/>
+        </div>
+      </div>
+      <div class="control-group">
+        <label for="content" class="control-label">Content</label>
+        <div class="controls">
+          <textarea name="content" class="span6" style="height: 475px"><%= content; %></textarea>
+        </div>
+      </div>
+      <div class="control-group">
+        <label for="draft">Status</label>
+        <div class="controls">
+          <select name="draft">
+            <option value="true">draft</option>
+            <option value="false">published</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-actions">
+        <input type="submit" class="btn btn-primary" value="Save"/>
+        <% if (isUpdate) { %>
+          <button type="submit" formaction="<%= deleteAction %>" formmethod="POST" class="btn btn-danger">Delete</button>
+        <% } %>
+      </div>
+    </fieldset>
+  </form>
+
