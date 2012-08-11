@@ -1,0 +1,95 @@
+body {
+  background: url(../images/bg.png);
+  font-family: helvetica, arial, sans-serif;
+  color: #92A0A0;
+}
+
+h1 {
+  color: #FDF6E3;
+  font-size: 64px;
+  height: 11px;
+}
+
+h2 {
+  color: #B58900;
+  font-weight: normal;
+  font-size: 24px;
+  margin: 0px;
+}
+
+a {
+  color: #92A0A0;
+}
+
+article header {
+  padding: 18px 18px 0 18px;
+}
+
+article, .standard-block {
+  background: #FDF6E3;
+  padding: 2px;
+  box-shadow: rgba(0,0,0,0.1) 0 1px 2px;
+  margin: 0 0 10px 0;
+}
+
+footer, .standard-block-footer {
+  background: #F1EBDB;
+  font-size: 12px;
+  padding: 8px 18px;
+}
+
+#wrapper {
+  width: 462px;
+  margin: 0 auto;
+}
+
+.content {
+  padding: 0 18px 18px 18px;
+}
+
+#comments-wrapper form {
+  border: 1px solid #657B83;
+}
+
+#comments-wrapper fieldset {
+  border: 0;
+  padding: 18px;
+}
+
+#comments-wrapper input[type="text"] {
+  border: 0;
+  border-bottom: 2px dashed #93A1A1;
+  background: none;
+  color: #B58900;
+  font-size: 24px;
+  width: 419px;
+  margin-bottom: 26px;
+  font-family: inherit;
+}
+
+/* Can't be combined for who knows what reason */
+#comments-wrapper input::-webkit-input-placeholder {
+  color: #B58900;
+}
+
+#comments-wrapper input:-moz-placeholder {
+  color: #B58900;
+}
+
+#comments-wrapper textarea {
+  background: none;
+  border: 0;
+  width: 419px;
+  max-width: 419px;
+  height: 130px;
+  font-family: inherit;
+  font-size: 16px;
+}
+
+#comments-wrapper textarea::-webkit-input-placeholder {
+  color: #929F9F;
+}
+
+#comments-wrapper textarea:-moz-placeholder {
+  color: #929F9F;
+}

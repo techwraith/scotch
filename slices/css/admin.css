@@ -1,0 +1,148 @@
+body {
+  background: url(../images/bg.png);
+  font-family: helvetica, arial, sans-serif;
+  color: #92A0A0;
+}
+
+h1 {
+  color: #FDF6E3;
+  font-size: 64px;
+  height: 11px;
+}
+
+h2 {
+  color: #B58900;
+  font-weight: normal;
+  font-size: 24px;
+  margin: 0px;
+}
+
+a {
+  color: #92A0A0;
+}
+
+article header {
+  padding: 18px 18px 0 18px;
+}
+
+article, .standard-block {
+  background: #FDF6E3;
+  padding: 2px;
+  box-shadow: rgba(0,0,0,0.1) 0 1px 2px;
+  margin: 0 0 10px 0;
+}
+
+footer, .standard-block-footer {
+  background: #F1EBDB;
+  font-size: 12px;
+  padding: 8px 18px;
+}
+
+#wrapper {
+  width: 462px;
+  margin: 0 auto;
+}
+
+.content {
+  padding: 0 18px 18px 18px;
+}
+
+
+/**
+ * ADMIN PANEL STYLES
+ */
+
+#wrapper.admin-wrapper {
+  width: 940px
+}
+
+.admin-wrapper .col-1,
+.admin-wrapper .col-2 {
+  width: 462px;
+}
+
+.admin-wrapper .col-1 {
+  float: left;
+}
+
+.admin-wrapper .col-2 {
+  float: right;
+}
+
+.admin-wrapper .post article{
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.admin-wrapper .post:hover article,
+.admin-wrapper .post .edit {
+  border: 1px solid #657B83;
+}
+
+.admin-wrapper .post h2 {
+  color: #92A0A0;
+  border-bottom: 2px solid transparent;
+  margin: 0 0 10px 0;
+}
+
+.admin-wrapper .post:hover h2,
+.admin-wrapper .post .edit h2 {
+  color: #B58900;
+}
+
+.admin-wrapper .post .edit {
+  cursor: default;
+}
+
+.admin-wrapper .post h2:hover {
+  border-bottom: 2px dashed #93A1A1;
+}
+
+/**
+ * LOGIN STYLES
+ */
+
+.login-wrapper {
+  padding: 270px 0 0 0;
+}
+
+.login-wrapper fieldset {
+  border: 0;
+  padding: 30px 18px 0px;
+  position: relative;
+}
+
+.login-wrapper input[type="text"],
+.login-wrapper input[type="password"] {
+  border: 0;
+  border-bottom: 2px dashed #93A1A1;
+  background: none;
+  color: #B58900;
+  font-size: 24px;
+  width: 419px;
+  margin-bottom: 26px;
+  font-family: inherit;
+}
+
+.login-wrapper input[type="text"]:focus,
+.login-wrapper input[type="password"]:focus {
+  outline: none;
+}
+
+/* Can't be combined for who knows what reason */
+.login-wrapper input::-webkit-input-placeholder {
+  color: #B58900;
+}
+
+.login-wrapper input:-moz-placeholder {
+  color: #B58900;
+}
+
+.login-wrapper input[type="submit"] {
+  text-indent: -9999px;
+  width: 25px;
+  height: 22px;
+  position: absolute;
+  bottom: 36px;
+  right: 18px;
+}
