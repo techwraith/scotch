@@ -1,0 +1,25 @@
+var router = new geddy.RegExpRouter();
+
+// DASHBOARDS
+router.get(    '/dashboard')            .to('Dashboards.main');
+router.get(    '/dashboard/install')    .to('Dashboards.install');
+router.post(   '/dashboard/finish')     .to('Dashboards.finish');
+router.get(    '/dashboard/analytics')  .to('Dashboards.analytics');
+
+// LOGIN
+router.get(    '/dashboard/login')      .to('Dashboards.login');
+router.post(   '/dashboard/login')      .to('Dashboards.authenticate');
+
+// POSTS
+router.get(    '/dashboard/post')       .to('Posts.add');
+router.post(   '/dashboard/post')       .to('Posts.create');
+router.get(    '/dashboard/post/:slug') .to('Posts.edit');
+router.put(    '/dashboard/post/:slug') .to('Posts.update');
+router.del(    '/dashboard/post/:slug') .to('Posts.remove');
+
+// PUBLIC POSTS
+router.get('/posts.json').to('Posts.list');
+router.get('/:slug').to('Posts.show');
+router.get('/').to('Posts.index');
+
+exports.router = router;

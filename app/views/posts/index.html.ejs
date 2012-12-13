@@ -1,0 +1,14 @@
+<% if (posts.length) { %>
+  <% for (var i = 0, ii = posts.length; i < ii; i++) { %>
+    <div class="row list-item" id="post-<%= posts[i].id; %>">
+      <div class="span8">
+        <h3><%- linkTo(posts[i].title, postPath(posts[i].id)); %></h3>
+      </div>
+      <div class="span4">
+        <h3><i class="icon-list-alt"></i><%= posts[i].id; %></h3>
+      </div>
+    </div>
+  <% } %>
+<% } else { %>
+  <h1>Nothing to see here...</h1>
+<% } %>
