@@ -5,7 +5,7 @@ geddy.string.highlight = require('highlight').Highlight;
 geddy.string.md.setOptions({
   gfm: true,
   pedantic: false,
-  sanitize: true,
+  sanitize: false,
   // callback for code highlighter
   highlight: function(code, lang) {
     return geddy.string.highlight(code);

@@ -1,5 +1,5 @@
 <div class="hero-unit">
-  <form id="post-form" class="form-horizontal" action="/dashboard/posts/<%= params.slug %>?_method=PUT" method="POST">
+  <form id="post-form" class="form-horizontal" action="/dashboard/post/<%= params.slug %>?_method=PUT" method="POST">
     <fieldset>
       <legend>Update this Post</legend>
       <% if(params.errors) { %>
