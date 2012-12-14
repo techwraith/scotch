@@ -21,9 +21,6 @@ var config = {
 , debug: true
 , hostname: 'localhost'
 , port: 4000
-, model: {
-    defaultAdapter: 'memory'
-  }
 , sessions: {
     store: 'memory'
   , key: 'sid'

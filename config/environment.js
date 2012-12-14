@@ -1,5 +1,13 @@
 var config = {
-  realtime: true
+  realtime: true,
+  model: {
+    defaultAdapter: 'mongo'
+  },
+  db: {
+    mongo: {
+      dbname: 'blog'
+    }
+  }
 };
 
 module.exports = config;
