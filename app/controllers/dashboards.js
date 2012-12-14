@@ -14,13 +14,23 @@ var Dashboards = function () {
     this.respond(params);
   };
 
-  this.finish = function (req, resp, param) {
-    // save params for site
-    // set geddy.installed to true
-    geddy.installed = true;
+  this.finish = function (req, resp, params) {
+    params.id = params.id || geddy.string.uuid(10);
+
+    var self = this
+      , site = geddy.model.Site.create(params);
+
+    site.save(function(err, data) {
+      if (err) {
+        params.errors = err;
+        self.transfer('add');
+      } else {
+        geddy.installed = true;
+        self.session.set('site', site);
+        self.redirect('/dashboard');
+      }
+    });
     // TODO: implement a site check in init.js
-    this.session.set('user', true);
-    this.redirect('/dashboard');
   };
 
   this.analytics = function (req, resp, params) {

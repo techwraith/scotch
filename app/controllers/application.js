@@ -40,7 +40,7 @@ var Application = function () {
 
   // check if the user has signed in
   var checkAuth = function (next) {
-    return this.redirectTo('/dashboard/login').unless(this.session.get('user'), next);
+    return this.redirectTo('/dashboard/login').unless(this.session.get('site'), next);
   };
 
   this.before(checkInstall, {except: ['install', 'finish'], async: true});
