@@ -24,7 +24,7 @@ var Posts = function () {
         params.errors = err;
         self.transfer('add');
       } else {
-        self.redirect({controller: self.name});
+        self.redirect('/dashboard');
       }
     });
   };
@@ -59,7 +59,7 @@ var Posts = function () {
           params.errors = err;
           self.transfer('edit');
         } else {
-          self.redirect({controller: self.name});
+          self.redirect('/dashboard');
         }
       });
     });
@@ -73,7 +73,7 @@ var Posts = function () {
         params.errors = err;
         self.transfer('edit');
       } else {
-        self.redirect({controller: self.name});
+        self.redirect('/dashboard');
       }
     });
   };
