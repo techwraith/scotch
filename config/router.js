@@ -20,6 +20,6 @@ router.del(    '/dashboard/post/:slug') .to('Posts.remove');
 // PUBLIC POSTS
 router.get('/posts.json').to('Posts.list');
 router.get('/:slug').to('Posts.show');
-router.get('/').to('Posts.index');
+router.get('/').to('Main.index');
 
 exports.router = router;
