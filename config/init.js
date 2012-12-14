@@ -1,4 +1,4 @@
-
+// Check if there is a site in the DB and set geddy.installed to true if it is
 
 // Add uncaught-exception handler in prod-like environments
 if (geddy.config.environment != 'development') {
