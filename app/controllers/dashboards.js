@@ -10,7 +10,8 @@ var Dashboards = function () {
   };
 
   this.install = function (req, resp, params) {
-    this.respond({params: params});
+    params.site = {};
+    this.respond(params);
   };
 
   this.finish = function (req, resp, param) {

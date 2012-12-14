@@ -1,3 +1,40 @@
-<form action="/dashboard/finish" method="post">
-  <input type="submit" value="install"/>
-</form>
+<div class="row">
+  <form  class="form-horizontal span6 offset3" action="/dashboard/finish" method="post">
+    <legend>Install Scotch</legend>
+    <fieldset>
+      <div class="control-group">
+        <label for="title" class="control-label">Blog Title</label>
+        <div class="controls">
+          <%- contentTag('input', site.title, {type:'text', class:'span4', name:'title'}) %>
+        </div>
+      </div>
+      <div class="control-group">
+        <label for="firstName" class="control-label">First Name</label>
+        <div class="controls">
+          <%- contentTag('input', site.firstName, {type:'text', class:'span4', name:'firstName'}) %>
+        </div>
+      </div>
+      <div class="control-group">
+        <label for="lastName" class="control-label">Last Name</label>
+        <div class="controls">
+          <%- contentTag('input', site.lastName, {type:'text', class:'span4', name:'lastName'}) %>
+        </div>
+      </div>
+      <div class="control-group">
+        <label for="email" class="control-label">email</label>
+        <div class="controls">
+          <%- contentTag('input', site.email, {type:'text', class:'span4', name:'email'}) %>
+        </div>
+      </div>
+      <div class="control-group">
+        <label for="password" class="control-label">Password</label>
+        <div class="controls">
+          <%- contentTag('input', site.password, {type:'password', class:'span4', name:'password'}) %>
+        </div>
+      </div>
+      <div class="form-actions">
+        <%- contentTag('input', 'install', {type: 'submit', class: 'btn btn-primary'}) %>
+      </div>
+    </fieldset>
+  </form>
+</div>
