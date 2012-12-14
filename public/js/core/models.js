@@ -62,6 +62,7 @@ Post = geddy.model.register('Post', Post);
 var Site = function () {
 
   this.defineProperties({
+    title: {type: 'string'},
     firstName: {type: 'string'},
     lastName: {type: 'string'},
     email: {type: 'string'},
@@ -71,18 +72,6 @@ var Site = function () {
   this.hasMany('Posts')
 
 };
-
-/*
-// Can also define them on the prototype
-User.prototype.someOtherMethod = function () {
-  // Do some other stuff
-};
-// Can also define static methods and properties
-User.someStaticMethod = function () {
-  // Do some other stuff
-};
-User.someStaticProperty = 'YYZ';
-*/
 
 User = geddy.model.register('Site', Site);
 
