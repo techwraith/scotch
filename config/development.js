@@ -19,7 +19,7 @@
 var config = {
   detailedErrors: true
 , debug: true
-, hostname: 'localhost'
+, hostname: '0.0.0.0'
 , port: 4000
 , sessions: {
     store: 'memory'
