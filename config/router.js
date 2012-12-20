@@ -15,7 +15,7 @@ router.get(    '/dashboard/post')         .to('Posts.add');
 router.post(   '/dashboard/post')         .to('Posts.create');
 router.get(    '/dashboard/post/:slug')   .to('Posts.edit');
 router.put(    '/dashboard/post/:slug')   .to('Posts.update');
-router.del(    '/dashboard/post/:slug')   .to('Posts.remove');
+router.del(    '/dashboard/post/:id')     .to('Posts.remove');
 
 // PUBLIC POSTS
 router.get(    '/posts.json')             .to('Posts.list');

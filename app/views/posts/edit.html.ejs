@@ -15,6 +15,6 @@
         <a href="/" class="btn">go home</a>
         <a href="/dashboard" class="btn">back to dashboard</a>
         <%- contentTag('input', 'save this post', {type: 'submit', class: 'btn'}) %>
-        <%- contentTag('button', 'remove this post', {type: 'submit', formaction: '/dashboard/post/' + params.slug + '?_method=DELETE', formmethod: 'POST', class: 'btn btn-red'}) %>
+        <%- contentTag('button', 'remove this post', {type: 'submit', formaction: '/dashboard/post/' + post.id + '?_method=DELETE', formmethod: 'POST', class: 'btn btn-red'}) %>
       </div>
   </form>

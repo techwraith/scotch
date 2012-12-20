@@ -43,7 +43,7 @@ var Posts = function () {
   this.edit = function (req, resp, params) {
     var self = this;
 
-    geddy.model.Post.first(params.id, function(err, post) {
+    geddy.model.Post.first({slug: params.slug}, function(err, post) {
       self.respond({params: params, post: post});
     });
   };
