@@ -1,10 +1,6 @@
-<div class="control-group">
-  <div class="controls">
-    <%- contentTag('input', post.title, {type:'text', class:'span6', name:'title'}) %>
-  </div>
+<div class="controls">
+  <%- contentTag('input', post.title, {type:'text', class:'span6', name:'title', placeholder: 'Post Title'}) %>
 </div>
-<div class="control-group">
-  <div class="controls">
-    <%- contentTag('textarea', post.markdown, {type:'text', class:'span6', name:'markdown'}) %>
-  </div>
+<div class="controls">
+  <%- contentTag('textarea', post.markdown, {type:'text', class:'span6', name:'markdown', placeholder: "Just start typing..."}) %>
 </div>

@@ -1,0 +1,240 @@
+/*
+ *  Typography
+ *
+ */
+
+body {
+  margin: 72px;
+  background: #FDF6E3;
+  color: #657B83;
+  font-size: 16px;
+  font-family: asap, serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: inika, serif;
+  font-weight: normal;
+  color: #859900;
+}
+
+h1 {
+  font-size: 48px;
+  line-height: 72px;
+  color: #268bd2;
+}
+
+h2 {
+  font-size: 36px;
+  line-height: 52px;
+}
+
+h3 {
+  font-size: 28px;
+  line-height: 48px;
+}
+
+h4 {
+  font-size: 24px;
+  line-height: 36px;
+}
+
+h5, h6 {
+  font-size: 18px;
+  line-height: 28px;
+}
+
+p {
+  font-size: 18px;
+  line-height: 28px;
+  margin: 28px 0;
+}
+
+hr {
+  background: #EEE8D5;
+  height: 4px;
+  margin: 28px auto;
+  border: none;
+  width: 60%;
+}
+
+a {
+  color: #B58900;
+  text-decoration: none;
+}
+
+.posts .title a {
+  color: #859900;
+}
+
+a:hover {
+  color: #d33682;
+  text-decoration: none;
+}
+
+pre, blockquote {
+  border: none;
+  border-radius: 0;
+  padding: 14px;
+  border-left: 4px solid #eee8d5;;
+  margin: 28px 0;
+  background: none;
+}
+
+pre, code {
+  font-family: m-1m, monospace;
+  font-size: 16px;
+  line-height: 28px;
+  color: #839496;
+}
+
+blockquote {
+  font-style: italic;
+}
+
+blockquote p {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+
+li {
+  font-size: 16px;
+  line-height: 28px;
+}
+
+.posts input[type=text], .posts textarea {
+  background: none;
+  box-shadow: none;
+  border-radius: none;
+  border: none;
+  outline: none;
+  width: 100%
+}
+
+.posts input[type=text]:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.posts input[type=text] {
+  height: 52px;
+  font-size: 36px;
+  line-height: 52px;
+  color: #859900;
+  font-family: inika, serif;
+}
+
+.posts textarea {
+  height: 870px;
+  resize: none;
+  margin-top: 28px;
+  font-size: 18px;
+  line-height: 28px;
+  color: #657B83;
+}
+
+input[type=submit] {
+  border: none;
+  box-shadow: none;
+}
+
+.byline {
+  font-size: 80%;
+}
+
+/*
+ * Components
+ *
+ */
+
+.hidden {
+  display: none !important;
+}
+
+a.btn, button.btn, input.btn {
+  display: inline-block;
+  padding: 14px;
+  color: #EEE8D5;
+  background: #2aa198;
+  font-size: 16px;
+  border: none;
+  box-shadow: none;
+}
+
+a.btn-red, button.btn-red, input.btn-red {
+  background: #dc322f;
+}
+
+a.btn-grey, button.btn-grey, input.btn-grey {
+  background: #EEE8D5;
+  color: #657B83;
+}
+
+a.btn-small, button.btn-small, input.btn-small {
+  padding: 6px;
+  font-size: 14px;
+  line-height: 100%;
+}
+
+a.btn-grey:hover, button.btn-grey:hover, input.btn-grey:hover {
+  color: #EEE8D5;
+}
+
+a.btn-disabled, button.btn-disabled, input.btn-disabled {
+  color: #FDF6E3;
+}
+
+a.btn-disabled:hover, button.btn-disabled:hover, input.btn-disabled:hover {
+  background: #EEE8D5;
+  color: #FDF6E3;
+  cursor: default;
+}
+
+.btn:hover {
+  background: #268bd2;
+}
+
+/*
+ * Layout
+ *
+ */
+
+.container {
+  width: 620px;
+}
+
+.dashboards .container {
+  width: 100%;
+}
+
+.menu {
+  padding: 28px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+.menu.right {
+  right: 0;
+  left: inherit;
+}
+
+.dashboards #welcome {
+  text-align: center;
+}
+
+.dashboards #posts .btn {
+  margin-left: 20px;
+}
+
+#login input[type=password], #login input[type=email] {
+  display: block;
+  font-size: 18px;
+  color: #657B83;
+  line-height: 28px;
+  border: none;
+  box-shadow: none;
+  width: 400px;
+  margin: 28px 0;
+  padding-left: 10px;
+}

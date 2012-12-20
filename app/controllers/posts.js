@@ -4,7 +4,7 @@ var Posts = function () {
   this.index = function (req, resp, params) {
     var self = this;
 
-    geddy.model.Post.all(function(err, posts) {
+    geddy.model.Post.first({isPublished: true}, {sort: {createdAt: 'asc'}}, function(err, posts) {
       self.respond({params: params, posts: posts});
     });
   };
@@ -65,7 +65,7 @@ var Posts = function () {
     });
   };
 
-  this.destroy = function (req, resp, params) {
+  this.remove = function (req, resp, params) {
     var self = this;
 
     geddy.model.Post.remove(params.id, function(err) {

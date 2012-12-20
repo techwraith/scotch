@@ -1,22 +1,17 @@
-<div class="hero-unit">
-  <form id="post-form" class="form-horizontal" action="/dashboard/post" method="POST">
-    <fieldset>
-      <legend>Create a new Post</legend>
-      <% if(params.errors) { %>
-      <div class="control-group">
-        <ul>
-        <% for(var err in params.errors) { %>
-          <li><%= params.errors[err]; %></li>
-        <% } %>
-        </ul>
-      </div>
+<form id="post-form" class="form-horizontal" action="/dashboard/post" method="POST">
+    <% if(params.errors) { %>
+      <ul>
+      <% for(var err in params.errors) { %>
+        <li><%= params.errors[err]; %></li>
       <% } %>
+      </ul>
+    <% } %>
 
-      <%- partial('form', {post: {}}) %>
+    <%- partial('form', {post: {}}) %>
 
-      <div class="form-actions">
-        <%- contentTag('input', 'Add', {type: 'submit', class: 'btn btn-primary'}) %>
-      </div>
-    </fieldset>
-  </form>
-</div>
+    <div class="menu">
+      <a href="/" class="btn">go home</a>
+      <a href="/dashboard" class="btn">back to dashboard</a>
+      <%- contentTag('input', 'publish this post', {type: 'submit', class: 'btn btn-primary'}) %>
+    </div>
+</form>

@@ -1,0 +1,110 @@
+<div class="menu">
+  <a href="/" class="btn" data-action="none">go home</a>
+  <% if (drafts.length) { %>
+  <a href="javascript://" class="btn" data-action="showDrafts">list drafts</a>
+  <% } %>
+  <% if (posts.length) { %>
+  <a href="javascript://" class="btn" data-action="showPosts">list posts</a>
+  <% } %>
+  <a href="/dashboard/post" class="btn" data-action="none">write a post</a>
+</div>
+
+<div id="welcome" class="welcome pane">
+<% if (!posts.length && !drafts.length) { %>
+  <h4>Looks like you haven't written any posts yet</h4>
+  <p><a href="/dashboard/post">Lets fix that&hellip;</a></p>
+<% } else { %>
+  <h4>Welcome back <%= session.get('site').firstName; %>.</h4>
+<% } %>
+</div>
+
+<div id="drafts" class="list hidden pane">
+<% if (drafts.length) { %>
+  <h2>Drafts</h2>
+  <% for (d in drafts) { %>
+    <p>
+      <a href="/<%= drafts[d].slug %>"><%= drafts[d].title %></a>
+      <a href="/dashboard/post/<%= drafts[d].slug %>" class="btn btn-small btn-grey">edit</a>
+    </p>
+    <% } %>
+<% } %>
+</div>
+
+<div id="posts" class="list hidden pane">
+<% if (posts.length) { %>
+  <h2>Posts</h2>
+  <% for (p in posts) { %>
+    <p>
+      <a href="/<%= posts[p].slug %>" class="title"><%= posts[p].title %></a>
+      <a href="/dashboard/post/<%= posts[p].slug %>" class="hidden btn btn-small btn-grey">edit</a>
+    </p>
+  <% } %>
+<% } %>
+</div>
+
+<script>
+$(document).ready(function($){
+  var app = app || {};
+
+  app.controllers = {};
+  app.components = {};
+
+  app.controllers.DashController = function () {
+
+    var self = this;
+
+    var height = ($(window).height() - $('#welcome').height()) / 3;
+    $('#welcome').css({'top': height+'px', 'position': 'relative'});
+
+    var $listItems = $('#posts p, #drafts p');
+    $listItems.each(function (i) {
+      $(this).hover(function (e) {
+        self.showEditButton(e, this);
+      }, function (e) {
+        self.hideEditButton(e, this);
+      });
+    });
+
+    this.show = function (pane) {
+      $('.pane').addClass('hidden');
+      $('#' + pane).removeClass('hidden');
+    };
+
+    this.showDrafts = function (e) {
+      this.show('drafts');
+    };
+
+    this.showPosts = function (e) {
+      this.show('posts');
+    };
+
+    this.showEditButton = function (e, context) {
+      $(context).find('.btn').removeClass('hidden');
+    };
+
+    this.hideEditButton = function (e, context) {
+      $(context).find('.btn').addClass('hidden');
+    }
+
+  };
+
+  app.components.Menu = function (controller) {
+    this.$element = $('.menu');
+    this.$element.find('a').each(function (i){
+      var $el = $(this)
+      , action = $el.attr('data-action');
+      if (action != 'none') {
+        $el.click(function (e) {
+          console.log('test')
+          controller[action](e);
+        });
+      }
+    });
+  };
+
+  app.dashboard = new app.controllers.DashController();
+  app.dashboard.menu = new app.components.Menu(app.dashboard);
+
+});
+</script>
+

@@ -7,9 +7,12 @@ var Main = function () {
     // if there is not post that matches
     //  get the latest post that is not a draft
     //  respond
-    this.respond(params, {
-      format: 'html'
-    , template: 'app/views/main/index'
+    var self = this;
+    geddy.model.Post.all({isPublished: true}, {sort: {'createdAt': 'desc'}}, function (err, posts){
+      self.respond({post: posts[0], posts: posts}, {
+        format: 'html'
+      , template: 'app/views/posts/show'
+      });
     });
   };
 };

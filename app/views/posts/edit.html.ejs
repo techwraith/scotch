@@ -1,7 +1,4 @@
-<div class="hero-unit">
   <form id="post-form" class="form-horizontal" action="/dashboard/post/<%= params.slug %>?_method=PUT" method="POST">
-    <fieldset>
-      <legend>Update this Post</legend>
       <% if(params.errors) { %>
       <div class="control-group">
         <ul>
@@ -14,10 +11,10 @@
 
       <%- partial('form', {post: post}) %>
 
-      <div class="form-actions">
-        <%- contentTag('input', 'Save', {type: 'submit', class: 'btn btn-primary'}) %>
-        <%- contentTag('button', 'Remove', {type: 'submit', formaction: '/posts/' + params.id + '?_method=DELETE', formmethod: 'POST', class: 'btn btn-danger'}) %>
+      <div class="menu">
+        <a href="/" class="btn">go home</a>
+        <a href="/dashboard" class="btn">back to dashboard</a>
+        <%- contentTag('input', 'save this post', {type: 'submit', class: 'btn'}) %>
+        <%- contentTag('button', 'remove this post', {type: 'submit', formaction: '/dashboard/post/' + params.slug + '?_method=DELETE', formmethod: 'POST', class: 'btn btn-red'}) %>
       </div>
-    </fieldset>
   </form>
-</div>

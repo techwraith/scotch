@@ -2,6 +2,7 @@
 geddy.model.Site.first(function(err, site) {
   if (!err && site) {
     geddy.installed = true;
+    geddy.site = site;
   }
 });
 

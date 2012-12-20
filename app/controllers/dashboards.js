@@ -3,10 +3,12 @@ var Dashboards = function () {
   // this.respondsWith = ['json'];
 
   this.main = function (req, resp, params) {
-    // get all posts that are drafts
-    // get all posts that are published
-    // respond
-    this.respond({params: params});
+    var self = this;
+    geddy.model.Post.all({isPublished: false}, function (err, drafts){
+    geddy.model.Post.all({isPublished: true}, function (err, posts) {
+      self.respond({params: params, posts: posts, drafts: drafts});
+    });
+    });
   };
 
   this.install = function (req, resp, params) {
@@ -30,7 +32,6 @@ var Dashboards = function () {
         self.redirect('/dashboard');
       }
     });
-    // TODO: implement a site check in init.js
   };
 
   this.analytics = function (req, resp, params) {
@@ -47,13 +48,11 @@ var Dashboards = function () {
   };
 
   this.authenticate = function (req, resp, params) {
-    // get site
-    // if password and email === site info
-    //   set this.session.set('user', site);
-    // else
-    //   redirect to login
-    this.session.set('user', true);
-    this.redirect('/dashboard');
+    var self = this;
+    geddy.model.Site.first({email: params.email, password: params.password}, function (err, site) {
+      self.session.set('site', site);
+      self.redirect('/dashboard');
+    });
   };
 
 };

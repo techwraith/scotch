@@ -1,9 +1,13 @@
-<div class="row">
-  <h1 class="title span6 offset3"><%= post.title %></h1>
-</div>
-
-<div class="row list-item">
-  <div class="span6 offset3">
-   <%- post.html %>
+<h2 class="title span8"><a href="/<%= post.slug %>"><%= post.title %></a></h2>
+<div class="span8">
+  <%- post.html %>
+  <div class="byline">
+    by <%= geddy.site.firstName + ' ' + geddy.site.lastName %> on <%= geddy.date.strftime(post.createdAt, '%m.%d.%y') %>
   </div>
 </div>
+<% if (typeof posts != 'undefined') { %>
+<div class="menu right">
+  <a href="/<%= posts[1].slug; %>" class="btn btn-grey">&laquo; older post</a>
+  <a href="javascript://" class="btn btn-grey btn-disabled">newer post &raquo;</a>
+</div>
+<% } %>

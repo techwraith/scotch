@@ -1,5 +1,5 @@
 var config = {
-  realtime: true,
+  port: 80,
   model: {
     defaultAdapter: 'mongo'
   },
