@@ -1,14 +1,22 @@
-geddy.marked = require('marked');
-geddy.string.slugify = function slugify(text) {
-  text = text.replace(/[^-a-zA-Z0-9,&\s]+/ig, '');
-  text = text.replace(/-/gi, "_");
-  text = text.replace(/\s/gi, "-");
-  return text;
-}
+// Check if there is a site in the DB and set geddy.installed to true if it is
+geddy.model.Site.first(function(err, site) {
+  if (!err && site) {
+    geddy.installed = true;
+    geddy.site = site;
+  }
+});
+
 // Add uncaught-exception handler in prod-like environments
 if (geddy.config.environment != 'development') {
   process.addListener('uncaughtException', function (err) {
-    geddy.log.error(JSON.stringify(err));
+    var msg = err.message;
+    if (err.stack) {
+      msg += '\n' + err.stack;
+    }
+    if (!msg) {
+      msg = JSON.stringify(err);
+    }
+    geddy.log.error(msg);
   });
 }
 

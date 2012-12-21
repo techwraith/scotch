@@ -1,16 +1,13 @@
 var config = {
-  metrics: {
-    port: 4001
+  port: 80,
+  model: {
+    defaultAdapter: 'mongo'
   },
-
   db: {
     mongo: {
-      db: 'scotch'
+      dbname: 'blog'
     }
   }
-
 };
 
 module.exports = config;
-
-

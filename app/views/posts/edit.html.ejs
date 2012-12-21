@@ -1,3 +1,20 @@
-<div class="hero-unit">
-  <%= partial('_form', {params: params, post: post}); %>
-</div>
+  <form id="post-form" class="form-horizontal" action="/dashboard/post/<%= params.slug %>?_method=PUT" method="POST">
+      <% if(params.errors) { %>
+      <div class="control-group">
+        <ul>
+        <% for(var err in params.errors) { %>
+          <li><%= params.errors[err]; %></li>
+        <% } %>
+        </ul>
+      </div>
+      <% } %>
+
+      <%- partial('form', {post: post}) %>
+
+      <div class="menu">
+        <a href="/" class="btn">go home</a>
+        <a href="/dashboard" class="btn">back to dashboard</a>
+        <%- contentTag('input', 'save this post', {type: 'submit', class: 'btn'}) %>
+        <%- contentTag('button', 'remove this post', {type: 'submit', formaction: '/dashboard/post/' + post.id + '?_method=DELETE', formmethod: 'POST', class: 'btn btn-red'}) %>
+      </div>
+  </form>

@@ -14,29 +14,38 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- */
+*/
 
-var requireInstall = function(complete) {
-  var self = this;
-  if (geddy.settings) {
-    return complete();
-  } else {
-    geddy.model.adapter.Settings.load({}, function(err, settings) {
-      if (Object.keys(settings).length) {
-        geddy.settings = settings;
-        return complete();
-      } else {
-        self.redirect('/install');
-        return complete();
-      }
-    });
-  }
-}
 var Application = function () {
-  this.before(requireInstall, {
-    except: ['install', 'finish']
-  , async: true
-  });
+
+  // Redirect a request if a simple boolean check doesn't pass
+  this.redirectTo = function (route, condition, callback) {
+    var self = this;
+    return {
+      unless: function (condition, callback) {
+        if (condition) {
+          return callback();
+        }
+        else {
+          return self.redirect(route);
+        };
+      }
+    };
+  };
+
+  // check if scotch has been set up
+  var checkInstall = function (next) {
+    return this.redirectTo('/dashboard/install').unless(geddy.installed, next);
+  };
+
+  // check if the user has signed in
+  var checkAuth = function (next) {
+    return this.redirectTo('/dashboard/login').unless(this.session.get('site'), next);
+  };
+
+  this.before(checkInstall, {except: ['install', 'finish'], async: true});
+  this.before(checkAuth, {except: ['index', 'show', 'list', 'login', 'authenticate', 'install', 'finish'], async: true});
+
 };
 
 exports.Application = Application;
