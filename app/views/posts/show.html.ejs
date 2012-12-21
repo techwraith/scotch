@@ -11,7 +11,7 @@
   <h4>This blog is powered by <a href="http://github.com/techwraith/scotch">Scotch</a></h4>
   <p>It doesn't look like <%= geddy.site.firstName %> has posted anything yet &hellip;</p>
 <% } %>
-<% if (typeof posts != 'undefined' && posts.length) { %>
+<% if (typeof posts != 'undefined' && posts.length > 1) { %>
 <div class="menu right">
   <a href="/<%= posts[1].slug; %>" class="btn btn-grey">&laquo; older post</a>
   <a href="javascript://" class="btn btn-grey btn-disabled">newer post &raquo;</a>
