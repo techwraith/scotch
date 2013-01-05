@@ -164,6 +164,10 @@ a.btn-red, button.btn-red, input.btn-red {
   background: #dc322f;
 }
 
+a.btn-selected, button.btn-selected, input.btn-selected {
+  background: #859900;
+}
+
 a.btn-grey, button.btn-grey, input.btn-grey {
   background: #EEE8D5;
   color: #657B83;

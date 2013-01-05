@@ -17,4 +17,9 @@
         <%- contentTag('input', 'save this post', {type: 'submit', class: 'btn'}) %>
         <%- contentTag('button', 'remove this post', {type: 'submit', formaction: '/dashboard/post/' + post.id + '?_method=DELETE', formmethod: 'POST', class: 'btn btn-red'}) %>
       </div>
+
+      <div class="menu right">
+        <a href="javascript://" class="btn <%= !post.isPublished ? 'btn-selected' : '' %> state">draft</a>
+        <a href="javascript://" class="btn <%= post.isPublished ? 'btn-selected' : '' %> state">published</a>
+      </div>
   </form>

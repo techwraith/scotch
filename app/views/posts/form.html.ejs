@@ -4,3 +4,18 @@
 <div class="controls">
   <%- contentTag('textarea', post.markdown, {type:'text', class:'span6', name:'markdown', placeholder: "Just start typing..."}) %>
 </div>
+<%- contentTag('input', post.isPublished, {type:'hidden', name:'isPublished', id:'isPublished'}) %>
+<script>
+$(document).ready(function(){
+  $('.state').click(function(){
+    var val = $('#isPublished').val();
+    if (val == 'true') {
+      $('#isPublished').val('false');
+    } else {
+      $('#isPublished').val('true');
+    }
+    $('.state.btn-selected').removeClass('btn-selected');
+    $(this).addClass('btn-selected');
+  });
+});
+</script>

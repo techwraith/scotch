@@ -35,18 +35,11 @@ var Post = function () {
       this.markdown = "**Draft**";
     }
 
-    /*
-     * TODO: implement publishing logic
-     *
-    if (!this.isPublished) {
+    if (!this.isPublished || this.isPublished == 'false') {
       this.isPublished = false;
+    } else {
+      this.isPublished = true;
     }
-    else {
-    */
-    this.isPublished = true;
-    /*
-    }
-    */
 
     this.slug = geddy.string.sluggerize(this.title);
     this.html = geddy.string.md(this.markdown);
