@@ -23,3 +23,12 @@ Your blog should be up and running on http://localhost
 #### Reading
 
 ![writing in Scotch](https://dl.dropbox.com/u/7982297/scotch_screens/read.png)
+
+
+### Things to Do
+
+- Allow authors to log out
+- create a way to change blog settings
+- add keyboard shortcuts to the dashboard
+- add command line interface for: generating a scotch site, starting a scotch daemon, generating a static site
+- figure out how to make the perfect ice cube
