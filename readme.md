@@ -1,6 +1,8 @@
 #Scotch
 ###A really classy, dead simple, markdown based, blogging framework for node.js
 
+![Scotch's dashboard](https://dl.dropbox.com/u/7982297/scotch_screens/dash.png)
+
 To try Scotch for yourself, make sure that you have node, npm, geddy (`npm install -g geddy`), and mongodb installed, then do this:
 
     $> git clone git://github.com/Techwraith/scotch.git
