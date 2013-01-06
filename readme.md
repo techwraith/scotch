@@ -3,6 +3,12 @@
 
 ![Scotch's dashboard](https://dl.dropbox.com/u/7982297/scotch_screens/dash.png)
 
+***
+
+![writing in Scotch](https://dl.dropbox.com/u/7982297/scotch_screens/write2.png)
+
+***
+
 To try Scotch for yourself, make sure that you have node, npm, geddy (`npm install -g geddy`), and mongodb installed, then do this:
 
     $> git clone git://github.com/Techwraith/scotch.git
