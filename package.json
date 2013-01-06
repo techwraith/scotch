@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "highlight": "~0.2.x",
-    "underscore": "~1.4.x"
+    "underscore": "~1.4.x",
     "marked": "~0.2.x",
     "mongodb-wrapper": "~0.4.x",
     "slugs": "~0.1.x",
