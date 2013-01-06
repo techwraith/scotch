@@ -21,6 +21,8 @@
 
 ***
 
+#### Installing
+
 To try Scotch for yourself, make sure that you have node, npm, geddy (`npm install -g geddy`), and mongodb installed, then do this:
 
     $> git clone git://github.com/Techwraith/scotch.git
