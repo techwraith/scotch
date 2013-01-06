@@ -1,11 +1,23 @@
 #Scotch
 ###A really classy, dead simple, markdown based, blogging framework for node.js
 
+***
+
+#### Dashboard
+
 ![Scotch's dashboard](https://dl.dropbox.com/u/7982297/scotch_screens/dash.png)
 
 ***
 
+#### Writing
+
 ![writing in Scotch](https://dl.dropbox.com/u/7982297/scotch_screens/write2.png)
+
+***
+
+#### Reading
+
+![writing in Scotch](https://dl.dropbox.com/u/7982297/scotch_screens/read.png)
 
 ***
 
