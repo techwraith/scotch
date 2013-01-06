@@ -12,7 +12,7 @@
 <div id="welcome" class="welcome pane">
 <% if (!posts.length && !drafts.length) { %>
   <h4>Looks like you haven't written any posts yet</h4>
-  <p><a href="/dashboard/post">Lets fix that&hellip;</a></p>
+  <p><a href="/dashboard/post" class="btn btn-magenta">Lets fix that&hellip;</a></p>
 <% } else { %>
   <h4>Welcome back <%= session.get('site').firstName; %>.</h4>
 <% } %>

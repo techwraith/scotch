@@ -28,6 +28,7 @@ var Dashboards = function () {
         self.transfer('add');
       } else {
         geddy.installed = true;
+        geddy.site = site;
         self.session.set('site', site);
         self.redirect('/dashboard');
       }

@@ -41,7 +41,9 @@ var Post = function () {
       this.isPublished = true;
     }
 
-    this.slug = geddy.string.sluggerize(this.title);
+    if (!this.slug) {
+      this.slug = geddy.string.sluggerize(this.title);
+    }
     this.html = geddy.string.md(this.markdown);
 
     // in case we call this manually and want to chain

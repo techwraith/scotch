@@ -2,6 +2,7 @@ var Site = function () {
 
   this.defineProperties({
     title: {type: 'string'},
+    twitter: {type: 'string'},
     firstName: {type: 'string'},
     lastName: {type: 'string'},
     email: {type: 'string'},

@@ -42,7 +42,9 @@ var Post = function () {
       this.isPublished = true;
     }
 
-    this.slug = geddy.string.sluggerize(this.title);
+    if (!this.slug) {
+      this.slug = geddy.string.sluggerize(this.title);
+    }
     this.html = geddy.string.md(this.markdown);
 
     // in case we call this manually and want to chain
@@ -62,6 +64,7 @@ var Site = function () {
 
   this.defineProperties({
     title: {type: 'string'},
+    twitter: {type: 'string'},
     firstName: {type: 'string'},
     lastName: {type: 'string'},
     email: {type: 'string'},

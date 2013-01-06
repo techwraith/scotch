@@ -7,13 +7,21 @@
   </div>
 </div>
 <% } else { %>
-  <h1><%= geddy.site.title %></h1>
-  <h4>This blog is powered by <a href="http://github.com/techwraith/scotch">Scotch</a></h4>
+  <h3>This blog is powered by <a href="http://github.com/techwraith/scotch">Scotch</a></h3>
   <p>It doesn't look like <%= geddy.site.firstName %> has posted anything yet &hellip;</p>
+  <a href="http://twitter.com/<%= geddy.site.twitter %>" class="btn btn-small btn-grey">Contact <%= geddy.site.firstName %> on Twitter</a>
 <% } %>
+
 <% if (typeof posts != 'undefined' && posts.length > 1) { %>
 <div class="menu right">
   <a href="/<%= posts[1].slug; %>" class="btn btn-grey">&laquo; older post</a>
   <a href="javascript://" class="btn btn-grey btn-disabled">newer post &raquo;</a>
+</div>
+<% } %>
+
+<% if (typeof previous != 'undefined' || typeof next != 'undefined') { %>
+<div class="menu right">
+  <a href="<%= previous ? '/' + previous.slug : 'javascript://'; %>" class="btn btn-grey <%= !previous ? 'btn-disabled' : '' %>">&laquo; older post</a>
+  <a href="<%= next ? '/' + next.slug : 'javascript://'; %>" class="btn btn-grey <%= !next ? 'btn-disabled' : '' %>">newer post &raquo;</a>
 </div>
 <% } %>

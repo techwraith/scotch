@@ -5,6 +5,7 @@
 
 body {
   margin: 72px;
+  margin-top: 108px;
   background: #FDF6E3;
   color: #657B83;
   font-size: 16px;
@@ -164,8 +165,25 @@ a.btn-red, button.btn-red, input.btn-red {
   background: #dc322f;
 }
 
-a.btn-selected, button.btn-selected, input.btn-selected {
-  background: #859900;
+a.btn-magenta, button.btn-magenta, input.btn-magenta {
+  background: #d33682;
+}
+
+a.btn-blue, button.btn-blue, input.btn-blue {
+  background: #268bd2;
+}
+
+a.btn-dark, button.btn-dark, input.btn-dark {
+  background: #586e75;
+}
+
+a.btn-darkish, button.btn-darkish, input.btn-darkish {
+  background: #657B83;
+}
+
+a.btn-selected, a.btn-selected:hover, button.btn-selected, input.btn-selected {
+  background: #859900 !important;
+  color: #EEE8D5 !important;
 }
 
 a.btn-grey, button.btn-grey, input.btn-grey {
@@ -202,12 +220,38 @@ a.btn-disabled:hover, button.btn-disabled:hover, input.btn-disabled:hover {
  *
  */
 
+.meta {
+  background: #073642;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 30px
+}
+
+.meta .btn {
+  margin-right: -4px;
+  padding: 8px 14px;;
+}
+
 .container {
   width: 620px;
 }
 
 .dashboards .container {
   width: 100%;
+}
+
+.form .container {
+  margin: 0 auto;
+}
+
+.install label, .install input {
+  display: block;
+}
+
+.install input {
+  margin: 14px 0 42px 0 !important;
 }
 
 .menu {
@@ -230,7 +274,7 @@ a.btn-disabled:hover, button.btn-disabled:hover, input.btn-disabled:hover {
   margin-left: 20px;
 }
 
-#login input[type=password], #login input[type=email] {
+#login input[type=password], #login input[type=email], .install input[type=password], .install input[type=text] {
   display: block;
   font-size: 18px;
   color: #657B83;
@@ -239,5 +283,47 @@ a.btn-disabled:hover, button.btn-disabled:hover, input.btn-disabled:hover {
   box-shadow: none;
   width: 400px;
   margin: 28px 0;
+  background: #EEE8D5;
   padding-left: 10px;
+}
+
+@media (max-width: 767px) {
+
+  body {
+    margin: 20px;
+    margin-top: 72px;
+  }
+
+  .container {
+    margin: 0;
+    width: 100%;
+  }
+
+  .menu {
+    position: static;
+    margin: 0;
+    padding: 20px 0 0 0;
+  }
+
+  pre code, code, pre {
+    word-break: break-word;
+    -ms-word-wrap: break-word;
+  }
+
+  .hidden-desktop {
+    display: inherit !important;
+  }
+
+  .visible-desktop {
+    display: none !important;
+  }
+
+  .visible-phone {
+    display: inherit !important;
+  }
+
+  .hidden-phone {
+    display: none !important;
+  }
+
 }

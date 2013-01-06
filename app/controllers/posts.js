@@ -1,3 +1,5 @@
+var _ = require('underscore');
+
 var Posts = function () {
   this.respondsWith = ['html', 'json', 'xml', 'js', 'txt'];
 
@@ -30,13 +32,23 @@ var Posts = function () {
   };
 
   this.show = function (req, resp, params) {
-    var self = this;
+    var self = this
+      , current, next, previous;
 
-    geddy.model.Post.first({slug: params.slug}, function(err, post) {
-      if (err || !post) {
+    geddy.model.Post.all({isPublished: true}, {sort: {'createdAt': 'desc'}}, function (err, posts){
+      current = _.find(posts, function(post){ return post.slug == params.slug});
+      if (current) {
+        current = current.toObj();
+      } else {
         return self.redirect('/');
       }
-      self.respond({params: params, post: post.toObj()});
+      for (var i in posts) {
+        if (posts[i].slug == current.slug) {i
+          next = posts[parseInt(i)-1] ? posts[parseInt(i)-1].toObj() : null;
+          previous = posts[parseInt(i)+1] ? posts[parseInt(i)+1].toObj() : null;
+        }
+      }
+      self.respond({params: params, post: current, previous: previous, next: next});
     });
   };
 

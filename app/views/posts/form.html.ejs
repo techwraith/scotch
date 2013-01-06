@@ -1,12 +1,16 @@
 <div class="controls">
-  <%- contentTag('input', post.title, {type:'text', class:'span6', name:'title', placeholder: 'Post Title'}) %>
+  <%- contentTag('input', post.title, {type:'text', autofocus: true, name:'title', placeholder: 'Post Title'}) %>
 </div>
 <div class="controls">
-  <%- contentTag('textarea', post.markdown, {type:'text', class:'span6', name:'markdown', placeholder: "Just start typing..."}) %>
+  <%- contentTag('textarea', post.markdown, {type:'text', name:'markdown', placeholder: "Just start typing..."}) %>
 </div>
 <%- contentTag('input', post.isPublished, {type:'hidden', name:'isPublished', id:'isPublished'}) %>
 <script>
 $(document).ready(function(){
+
+  // Dirty hack, but it works
+  $('body').addClass('form');
+
   $('.state').click(function(){
     var val = $('#isPublished').val();
     if (val == 'true') {
