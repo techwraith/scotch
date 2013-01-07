@@ -63,7 +63,7 @@ var Posts = function () {
   this.update = function (req, resp, params) {
     var self = this;
 
-    geddy.model.Post.first(params.id, function(err, post) {
+    geddy.model.Post.first({slug: params.slug}, function(err, post) {
       post.updateProperties(params);
 
       post.save(function(err, data) {
