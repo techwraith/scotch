@@ -41,10 +41,10 @@
   <body class="<%= params.controller.toLowerCase() %>">
     <header class="meta">
       <% if (geddy.site.firstName && geddy.site.lastName) { %>
-        <a href="/" class="btn btn-darkish"><%= geddy.site.firstName + ' ' + geddy.site.lastName %></a>
+        <a href="/" class="btn btn-grey"><%= geddy.site.firstName + ' ' + geddy.site.lastName %></a>
       <% } %>
       <% if (geddy.site.twitter) { %>
-        <a href="http://twitter.com/<%= geddy.site.twitter %>" class="btn btn-dark">@<%= geddy.site.twitter %></a>
+        <a href="http://twitter.com/<%= geddy.site.twitter %>" class="btn btn-grey">@<%= geddy.site.twitter %></a>
       <% } %>
     </header>
     <div class="container">

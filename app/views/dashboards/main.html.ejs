@@ -23,8 +23,8 @@
   <h2>Drafts</h2>
   <% for (d in drafts) { %>
     <p>
-      <a href="/<%= drafts[d].slug %>"><%= drafts[d].title %></a>
-      <a href="/dashboard/post/<%= drafts[d].slug %>" class="btn btn-small btn-grey">edit</a>
+      <a href="/<%= drafts[d].slug %>" class="title"><%= drafts[d].title %></a>
+      <a href="/dashboard/post/<%= drafts[d].slug %>" class="hidden btn btn-small btn-grey">edit</a>
     </p>
     <% } %>
 <% } %>
