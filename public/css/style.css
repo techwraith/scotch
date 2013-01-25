@@ -181,6 +181,10 @@ a.btn-darkish, button.btn-darkish, input.btn-darkish {
   background: #657B83;
 }
 
+a.btn-blank, button.btn-blank, input.btn-blank {
+  background: none;
+}
+
 a.btn-selected, a.btn-selected:hover, button.btn-selected, input.btn-selected {
   background: #859900 !important;
   color: #EEE8D5 !important;
@@ -221,7 +225,7 @@ a.btn-disabled:hover, button.btn-disabled:hover, input.btn-disabled:hover {
  */
 
 .meta {
-  background: #073642;
+  background: #EEE8D5;
   position: absolute;
   top: 0;
   left: 0;

@@ -13,7 +13,11 @@ var Dashboards = function () {
 
   this.install = function (req, resp, params) {
     params.site = {};
-    this.respond(params);
+    if (geddy.installed = true){
+      this.redirect('/')
+    } else {
+      this.respond(params);
+    }
   };
 
   this.finish = function (req, resp, params) {

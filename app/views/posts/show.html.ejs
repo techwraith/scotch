@@ -10,6 +10,9 @@
   <h3>This blog is powered by <a href="http://github.com/techwraith/scotch">Scotch</a></h3>
   <p>It doesn't look like <%= geddy.site.firstName %> has posted anything yet &hellip;</p>
   <a href="http://twitter.com/<%= geddy.site.twitter %>" class="btn btn-small btn-grey">Contact <%= geddy.site.firstName %> on Twitter</a>
+  <script>
+    $('.container').css({'width': '100%', 'text-align': 'center'});
+  </script>
 <% } %>
 
 <% if (typeof posts != 'undefined' && posts.length > 1) { %>
