@@ -68,6 +68,12 @@ var Posts = function () {
     var self = this;
 
     geddy.model.Post.first({slug: params.slug}, function(err, post) {
+      // FIXME
+      if (!params.isPublished || this.isPublished == 'false') {
+        params.isPublished = false;
+      } else {
+        params.isPublished = true;
+      }
       post.updateProperties(params);
 
       post.save(function(err, data) {
