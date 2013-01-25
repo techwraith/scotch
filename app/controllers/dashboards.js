@@ -4,8 +4,8 @@ var Dashboards = function () {
 
   this.main = function (req, resp, params) {
     var self = this;
-    geddy.model.Post.all({isPublished: false}, function (err, drafts){
-    geddy.model.Post.all({isPublished: true}, function (err, posts) {
+    geddy.model.Post.all({isPublished: false}, {sort: {createdAt: 'ASC'}}, function (err, drafts){
+    geddy.model.Post.all({isPublished: true}, {sort: {createdAt: 'ASC'}}, function (err, posts) {
       self.respond({params: params, posts: posts, drafts: drafts});
     });
     });

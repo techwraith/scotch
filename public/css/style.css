@@ -278,7 +278,9 @@ a.btn-disabled:hover, button.btn-disabled:hover, input.btn-disabled:hover {
   margin-left: 20px;
 }
 
-#login input[type=password], #login input[type=email], .install input[type=password], .install input[type=text] {
+#login input[type=password], #login input[type=email],
+.install input[type=password], .install input[type=text],
+.dashboards input[type=text] {
   display: block;
   font-size: 18px;
   color: #657B83;
@@ -289,6 +291,11 @@ a.btn-disabled:hover, button.btn-disabled:hover, input.btn-disabled:hover {
   margin: 28px 0;
   background: #EEE8D5;
   padding-left: 10px;
+}
+
+.dashboards input[type=text]:focus {
+  outline: none;
+  border: none;
 }
 
 @media (max-width: 767px) {

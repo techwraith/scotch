@@ -26,7 +26,11 @@ var Posts = function () {
         params.errors = err;
         self.transfer('add');
       } else {
-        self.redirect('/dashboard');
+        if (data.isPublished) {
+          self.redirect('/'+data.slug);
+        } else {
+          self.redirect('/dashboard#drafts')
+        }
       }
     });
   };
