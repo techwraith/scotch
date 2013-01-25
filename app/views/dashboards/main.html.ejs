@@ -13,12 +13,10 @@
 <% if (!posts.length && !drafts.length) { %>
   <h4>Looks like you haven't written any posts yet</h4>
   <p><a href="/dashboard/post" class="btn btn-magenta">Lets fix that&hellip;</a></p>
-<% } else { %>
-  <h4>Welcome back <%= session.get('site').firstName; %>.</h4>
 <% } %>
 </div>
 
-<div id="drafts" class="list hidden pane">
+<div id="drafts" class="list pane">
 <% if (drafts.length) { %>
   <h2>Drafts</h2>
   <% for (d in drafts) { %>
