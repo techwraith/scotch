@@ -27,7 +27,7 @@ Your blog should be up and running on http://localhost
 
 ### Things to Do
 
-- make sure slugs are unique
+- make the dashboard mobile friendly like the rest of the app
 - allow authors to log out
 - create a way to change blog settings
 - add keyboard shortcuts to the dashboard
