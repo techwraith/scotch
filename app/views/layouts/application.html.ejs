@@ -46,6 +46,9 @@
       <% if (geddy.site.twitter) { %>
         <a href="http://twitter.com/<%= geddy.site.twitter %>" class="btn btn-grey">@<%= geddy.site.twitter %></a>
       <% } %>
+      <% if (session.get('site')) { %>
+        <a href="/dashboard" class="btn btn-grey pull-right">dashboard</a>
+      <% } %>
     </header>
     <div class="container">
       <%- yield(); %>
