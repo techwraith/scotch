@@ -12,17 +12,17 @@ Your blog should be up and running on http://localhost
 
 #### Dashboard
 
-![Scotch's dashboard](https://dl.dropbox.com/u/7982297/scotch_screens/dash.png)
+![Scotch's dashboard](https://dl.dropbox.com/u/7982297/scotch_screens/newdash.png)
 
 
 #### Writing
 
-![writing in Scotch](https://dl.dropbox.com/u/7982297/scotch_screens/write2.png)
+![writing in Scotch](https://dl.dropbox.com/u/7982297/scotch_screens/newwrite.png)
 
 
 #### Reading
 
-![writing in Scotch](https://dl.dropbox.com/u/7982297/scotch_screens/read.png)
+![writing in Scotch](https://dl.dropbox.com/u/7982297/scotch_screens/newread.png)
 
 
 ### Things to Do
