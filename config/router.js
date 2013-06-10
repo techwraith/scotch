@@ -8,6 +8,7 @@ router.get(    '/dashboard/analytics')    .to('Dashboards.analytics');
 
 // LOGIN
 router.get(    '/dashboard/login')        .to('Dashboards.login');
+router.get(    '/dashboard/logout')       .to('Dashboards.logout');
 router.post(   '/dashboard/authenticate') .to('Dashboards.authenticate');
 
 // POSTS

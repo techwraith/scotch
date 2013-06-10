@@ -52,6 +52,11 @@ var Dashboards = function () {
     this.respond({params: params});
   };
 
+  this.logout = function (req, resp, params) {
+    this.session.set('site', false);
+    this.redirect('/');
+  }
+
   this.authenticate = function (req, resp, params) {
     var self = this;
     geddy.model.Site.first({email: params.email, password: params.password}, function (err, site) {
