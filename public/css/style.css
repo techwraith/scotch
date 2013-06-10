@@ -330,11 +330,33 @@ a.btn-disabled:hover, button.btn-disabled:hover, input.btn-disabled:hover {
     width: 100%;
   }
 
+  #login input[type=password],
+  #login input[type=email],
+  .install input[type=password],
+  .install input[type=text],
+  .dashboards input[type=text] {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
   .menu {
     position: static;
     margin: 0;
     padding: 20px 0 0 0;
     background: transparent;
+  }
+
+  .dashboards .menu {
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .menu .btn {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 4px;
+    text-align: left;
   }
 
   pre code, code, pre {

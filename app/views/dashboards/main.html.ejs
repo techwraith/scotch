@@ -1,13 +1,3 @@
-<div class="menu">
-  <a href="/" class="btn" data-action="none">go home</a>
-  <% if (drafts.length) { %>
-  <a href="#drafts" class="btn" data-action="showDrafts">list ideas</a>
-  <% } %>
-  <% if (posts.length) { %>
-  <a href="#posts" class="btn" data-action="showPosts">list posts</a>
-  <% } %>
-  <a href="/dashboard/post" class="btn" data-action="none">write a post</a>
-</div>
 
 <div id="welcome" class="welcome pane">
 <% if (!posts.length && !drafts.length) { %>
@@ -41,6 +31,17 @@
     </p>
   <% } %>
 <% } %>
+</div>
+
+<div class="menu">
+  <a href="/" class="btn" data-action="none">go home</a>
+  <% if (drafts.length) { %>
+  <a href="#drafts" class="btn" data-action="showDrafts">list ideas</a>
+  <% } %>
+  <% if (posts.length) { %>
+  <a href="#posts" class="btn" data-action="showPosts">list posts</a>
+  <% } %>
+  <a href="/dashboard/post" class="btn" data-action="none">write a post</a>
 </div>
 
 <script>
