@@ -11,6 +11,7 @@
 
       <%- partial('form', {post: post}) %>
 
+    <div class="menu-holder">
       <div class="menu">
         <a href="/" class="btn">go home</a>
         <a href="/dashboard" class="btn">back to dashboard</a>
@@ -22,4 +23,5 @@
         <a href="javascript://" class="btn <%= !post.isPublished ? 'btn-selected' : '' %> state">draft</a>
         <a href="javascript://" class="btn <%= post.isPublished ? 'btn-selected' : '' %> state">published</a>
       </div>
+    </div>
   </form>
