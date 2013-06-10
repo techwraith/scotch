@@ -11,6 +11,8 @@ $(document).ready(function(){
   // Dirty hack, but it works
   $('body').addClass('form');
 
+  $('textarea').autosize();
+
   $('.state').click(function(){
     var val = $('#isPublished').val();
     if (val == 'true') {
