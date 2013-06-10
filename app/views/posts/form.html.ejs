@@ -23,5 +23,8 @@ $(document).ready(function(){
     $('.state.btn-selected').removeClass('btn-selected');
     $(this).addClass('btn-selected');
   });
+
+  key.sequence(['g', 'd'], function () { window.location = '/dashboard'; });
+  key.sequence(['g', 'h'], function () { window.location = '/'; });
 });
 </script>

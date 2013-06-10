@@ -106,6 +106,14 @@ $(document).ready(function($){
   app.dashboard = new app.controllers.DashController();
   app.dashboard.menu = new app.components.Menu(app.dashboard);
 
+  key.sequence(['g', 'p'], function () { app.dashboard.showPosts(); });
+  key.sequence(['g', 'i'], function () { app.dashboard.showDrafts(); });
+  key.sequence(['g', 'h'], function () { window.location = '/'; });
+  key.sequence(['n', 'p'], function () { window.location = '/dashboard/post'; });
+  key('c', function () {
+    setTimeout( function () { $('input[type=text]').focus(); }, 0);
+  });
+
   switch (window.location.hash) {
     case '#drafts':
       app.dashboard.showDrafts();
