@@ -27,9 +27,4 @@ Your blog should be up and running on http://localhost
 
 ### Things to Do
 
-- make the dashboard mobile friendly like the rest of the app
-- allow authors to log out
-- create a way to change blog settings
-- add keyboard shortcuts to the dashboard
-- add command line interface for: generating a scotch site, starting a scotch daemon, generating a static site
-- figure out how to make the perfect ice cube
+If you'd like to help out, check out the [issue list](https://github.com/Techwraith/scotch/issues?state=open).
