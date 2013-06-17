@@ -1,3 +1,5 @@
+var _ = require('underscore');
+
 var Main = function () {
   this.index = function (req, resp, params) {
     // get the post that:
@@ -9,6 +11,10 @@ var Main = function () {
     //  respond
     var self = this;
     geddy.model.Post.all({isPublished: true}, {sort: {'createdAt': 'desc'}}, function (err, posts){
+      posts = _.map(posts, function (post, key) {
+        return post.toFormattedObj(params.action);
+      }, this);
+      
       self.respond({post: posts[0], posts: posts}, {
         format: 'html'
       , template: 'app/views/posts/show'

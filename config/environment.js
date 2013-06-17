@@ -7,6 +7,10 @@ var config = {
     mongo: {
       dbname: 'blog'
     }
+  },
+  plugins: {
+    formatters: [
+    ]
   }
 };
 
