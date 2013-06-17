@@ -1,6 +1,6 @@
 {
   "name": "scotch-blog",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "A really classy, dead simple, markdown based, blogging framework for node.js",
   "main": "./bin/cli.js",
   "bin": {
