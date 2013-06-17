@@ -42,7 +42,7 @@ var Posts = function () {
     geddy.model.Post.all({isPublished: true}, {sort: {'createdAt': 'desc'}}, function (err, posts){
       current = _.find(posts, function(post){ return post.slug == params.slug});
       if (current) {
-        current = current.toObj();
+        current = current.toFormattedObj(params.action);
       } else {
         return self.redirect('/');
       }
