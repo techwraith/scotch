@@ -4,7 +4,7 @@
   "description": "A really classy, dead simple, markdown based, blogging framework for node.js",
   "main": "bin/cli.js",
   "bin": {
-    "scotch": "cli.js"
+    "scotch": "bin/cli.js"
   },
   "directories": {
     "test": "test"
@@ -15,8 +15,9 @@
     "marked": "~0.2.x",
     "mongodb-wrapper": "~0.4.x",
     "slugs": "~0.1.x",
-    "socket.io": "~0.9.x",
-    "geddy": "~0.6.x"
+    "geddy": "~0.8.x",
+    "commander": "~1.2.0",
+    "utilities": "0.0.26"
   },
   "devDependencies": {},
   "scripts": {
