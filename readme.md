@@ -28,9 +28,6 @@ Your you should now have a 'static' directory in your blog's root directory.
  
 ![writing in Scotch](https://dl.dropbox.com/u/7982297/scotch_screens/newwrite.png)
 
-#### Formatting
- * You can use the HTML comment `<!-- more -->` to insert a "read more" link.
-
 #### Reading
 
 ![writing in Scotch](https://dl.dropbox.com/u/7982297/scotch_screens/newread.png)
