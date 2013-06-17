@@ -3,12 +3,21 @@
 
 To try Scotch for yourself, make sure that you have node, npm, geddy (`npm install -g geddy`), and mongodb installed (and running), then do this:
 
-    $> git clone git://github.com/Techwraith/scotch.git
-    $> cd scotch && npm install && sudo geddy
+    $> npm install -g scotch-blog
+    $> scotch create blog
+    $> cd blog
+    $> scotch serve
 
 Go to http://0.0.0.0/dashboard/install to install Scotch.
 
 Your blog should be up and running on http://localhost
+
+### Static Site Generation
+
+    $> cd blog
+    $> scotch generate
+    
+Your you should now have a 'static' directory in your blog's root directory.
 
 #### Dashboard
 
