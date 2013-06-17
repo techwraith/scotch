@@ -6,7 +6,7 @@ To try Scotch for yourself, make sure that you have node, npm, geddy (`npm insta
     $> npm install -g scotch-blog
     $> scotch create blog
     $> cd blog
-    $> scotch serve
+    $> sudo scotch serve
 
 Go to http://0.0.0.0/dashboard/install to install Scotch.
 
