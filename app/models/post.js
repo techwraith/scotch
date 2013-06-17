@@ -65,7 +65,7 @@ var Post = function () {
       , ii;
     
     _.each(geddy.config.plugins.formatters, function(formatterName) {
-      formatter = require("scotch-formatter-"+formatterName);
+      formatter = require(formatterName);
       
       if(typeof formatter[scenario] === 'function') {
         buffer = formatter[scenario].apply(this,[buffer]);
