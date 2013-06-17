@@ -6,7 +6,7 @@
 <% } %>
 </div>
 
-<div id="drafts" class="list pane <% if (!drafts.length) { %>hidden<% } %>">
+<div id="drafts" class="list pane <% if (!posts.length && !drafts.length) { %>hidden<% } %>">
   <h2>Ideas</h2>
   <form action="/dashboard/post" method="POST">
     <input type="text" name="title" placeholder="Have an idea?" autofocus />
@@ -35,7 +35,7 @@
 
 <div class="menu">
   <a href="/" class="btn" data-action="none">go home</a>
-  <% if (drafts.length) { %>
+  <% if (drafts.length || posts.length) { %>
   <a href="#drafts" class="btn" data-action="showDrafts">list ideas</a>
   <% } %>
   <% if (posts.length) { %>
