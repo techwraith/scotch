@@ -24,12 +24,11 @@ var Controller = function () {
     utils.file.rmRf(path.join(name, '.gitignore'), {silent: true});
   };
 
-  this.serve = function (port) {
+  this.serve = function () {
     console.log('Serving on port 80');
     console.log(process.cwd())
     geddy.start({
       environment: 'production'
-    , port: port
     , 'geddy-root': process.cwd()
     });
   };
