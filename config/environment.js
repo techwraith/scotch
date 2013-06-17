@@ -10,7 +10,6 @@ var config = {
   },
   plugins: {
     formatters: [
-      'readmore'
     ]
   }
 };
