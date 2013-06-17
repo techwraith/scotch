@@ -28,7 +28,7 @@ var Controller = function () {
     console.log('Serving on port 80');
     console.log(process.cwd())
     geddy.start({
-    , 'geddy-root': process.cwd()
+      'geddy-root': process.cwd()
     });
   };
 
