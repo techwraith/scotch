@@ -37,11 +37,36 @@ Your you should now have a 'static' directory in your blog's root directory.
 
 #### Plugins
 
-Plugins are installed in `/app/plugins`.
+Plugins are installed via npm and enabled via in `app/config/environment.js`.
+
+```
+/*
+* Sample app/config.environment.js
+* `npm install readmore`
+*/
+var config = {
+  port: 80,
+  model: {
+    defaultAdapter: 'mongo'
+  },
+  db: {
+    mongo: {
+      dbname: 'blog'
+    }
+  },
+  plugins: {
+    formatters: [
+      'readmore'
+    ]
+  }
+};
+
+module.exports = config;
+```
 
 ##### Formatters
 
-Formatter plugins enhance the markdown language and go in `/app/plugins/formatters`.
+Formatter plugins enhance the markdown language.
 
 ```js
 /*
@@ -61,7 +86,6 @@ var replacer = function (buffer) {
 exports.index = replacer;
 
 ```
-
 
 ### Things to Do
 
