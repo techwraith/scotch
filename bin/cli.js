@@ -10,7 +10,7 @@ var program = require('commander')
 
 program
   .option('create <name>', 'create a new directory (<name>) and generate a new Scotch site in it.')
-  .option('serve', 'start the server')
+  .option('serve [port]', 'start the server, defaults to 80', 80)
   .option('generate', 'generate a static html site')
   .parse(process.argv);
 
@@ -24,11 +24,13 @@ var Controller = function () {
     utils.file.rmRf(path.join(name, '.gitignore'), {silent: true});
   };
 
-  this.serve = function () {
-    console.log('Serving on port 80');
+  this.serve = function (port) {
+    port = port || 80;
+    console.log('Serving on port ' + port);
     console.log(process.cwd())
     geddy.start({
       'geddy-root': process.cwd()
+    , port: port
     });
   };
 
@@ -61,5 +63,5 @@ var Controller = function () {
 var actions = new Controller();
 
 if (program.create) return actions.create(program.create);
-if (program.serve) return actions.serve();
+if (program.serve) return actions.serve(program.serve);
 if (program.generate) return actions.generate();

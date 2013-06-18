@@ -13,6 +13,8 @@ geddy.string.md.setOptions({
   }
 });
 
+var _ = require('underscore');
+
 var Post = function () {
 
   this.defineProperties({
@@ -52,7 +54,40 @@ var Post = function () {
     return this;
 
   };
-
+  
+  /**
+  * Post-processes the post HTML using the user's plugins
+  * @param {string} scenario - Where the post will be displayed. Could be "index" or "show".
+  */
+  this.formatHtml = function (scenario) {
+    var buffer = this.html
+      , formatter
+      , i
+      , ii;
+    
+    _.each(geddy.config.plugins.formatters, function(formatterName) {
+      formatter = require(formatterName);
+      
+      if(typeof formatter[scenario] === 'function') {
+        buffer = formatter[scenario].apply(this,[buffer]);
+      }
+    }, this);
+    
+    return buffer;
+  };
+  
+  /*
+  * Use in place of the default toObj
+  */
+  this.toFormattedObj = function (scenario) {
+    var objectified = this.toObj();
+    
+    if(scenario) {
+      objectified.html = this.formatHtml.apply(this,[scenario]);
+    }
+    
+    return objectified;
+  };
 };
 
 Post = geddy.model.register('Post', Post);
