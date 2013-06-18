@@ -1,0 +1,9 @@
+{
+  "irc": {"server": "irc.freenode.net", "channel": "#scotch-blog"},
+  "domain": "scotchblog.org",
+  "sections": [
+    "installation",
+    "plugins",
+    "customization"
+  ]
+}
