@@ -1,14 +1,14 @@
 var config = {
-  port: 80,
-  model: {
+  port: 80
+, model: {
     defaultAdapter: 'mongo'
-  },
-  db: {
+  }
+, db: {
     mongo: {
       dbname: 'blog'
     }
-  },
-  plugins: {
+  }
+, plugins: {
     formatters: [
     ]
   }
