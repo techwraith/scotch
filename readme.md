@@ -19,7 +19,7 @@ Your blog should be up and running on `http://localhost`
     
 Your you should now have a 'static' directory in your blog's root directory.
 
-Read the [deployment docs] on how to configure static site deployment.
+Read the [deployment docs](#deployment) on how to configure static site deployment.
 
 #### Dashboard
 
@@ -36,7 +36,7 @@ Read the [deployment docs] on how to configure static site deployment.
 
 #### Deployment
 
-Create `config/deployment.js` and fill it with your deployment settings. At the moment we support S3 and FTP deployment.
+Create `config/deployment.js` and fill it with your deployment settings then run `scotch deploy` from your terminal. At the moment we support S3 and FTP deployment, with gh-pages on its way.
 
 ##### Sample S3 Settings
 ```js
