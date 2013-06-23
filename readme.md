@@ -8,9 +8,9 @@ To try Scotch for yourself, make sure that you have node, npm, and mongodb insta
     $> cd blog
     $> sudo scotch serve
 
-Go to http://0.0.0.0/dashboard/install to install Scotch.
+Go to `http://0.0.0.0/dashboard/install` to install Scotch.
 
-Your blog should be up and running on http://localhost
+Your blog should be up and running on `http://localhost`
 
 ### Static Site Generation
 
@@ -18,6 +18,8 @@ Your blog should be up and running on http://localhost
     $> scotch generate
     
 Your you should now have a 'static' directory in your blog's root directory.
+
+Read the [deployment docs] on how to configure static site deployment.
 
 #### Dashboard
 
@@ -31,6 +33,36 @@ Your you should now have a 'static' directory in your blog's root directory.
 #### Reading
 
 ![writing in Scotch](https://dl.dropbox.com/u/7982297/scotch_screens/newread.png)
+
+#### Deployment
+
+Create `config/deployment.js` and fill it with your deployment settings. At the moment we support S3 and FTP deployment.
+
+##### Sample S3 Settings
+```js
+module.exports = {
+  "destination": "s3"
+, "opts": {
+    "bucket": "<BUCKET NAME>"
+  , "key": "<AWS ACCESS KEY>"
+  , "secret": "<AWS SECRET KEY>"
+  , "region": "<AWS REGION>"      //us-west-1
+  }
+};
+```
+
+##### Sample FTP Settings
+```js
+module.exports = {
+  "destination": "ftp"
+, "opts": {
+    "host": "<FTP HOST>"          //ftp.myserver.com
+  , "port": <FTP PORT>            //Default: 21
+  , "username": "<FTP USERNAME>"
+  , "password": "<FTP PASSWORD>"
+  }
+};
+```
 
 #### Plugins
 
