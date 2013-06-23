@@ -63,5 +63,5 @@ var Controller = function () {
 var actions = new Controller();
 
 if (program.create) return actions.create(program.create);
-if (program.serve) return actions.serve(program.serve);
 if (program.generate) return actions.generate();
+if (program.serve) return actions.serve(program.serve);
