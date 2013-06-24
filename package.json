@@ -23,7 +23,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "jake test"
+    "test": "./node_modules/geddy/bin/cli.js jake test"
   },
   "repository": {
     "type": "git",
