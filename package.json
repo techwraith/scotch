@@ -19,7 +19,8 @@
     "commander": "~1.2.0",
     "utilities": "0.0.26",
     "request": "~2.21.0",
-    "envoy": "0.0.x"
+    "envoy": "0.0.x",
+    "request": "2.21.x"
   },
   "devDependencies": {},
   "scripts": {

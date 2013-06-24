@@ -130,5 +130,5 @@
     }
   };
   
-  module.exports = init.proxy('Post', tests);
+  module.exports = init.proxyModelTests('Post', tests);
 }());
