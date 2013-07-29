@@ -65,6 +65,23 @@ var Dashboards = function () {
     });
   };
 
+  this.settings = function (req, resp, params) {
+    params.site = {};
+    this.respond(params);
+  };
+
+  this.saveSettings = function (req, resp, params) {
+    var self = this;
+    geddy.model.Site.first({email: params.email, password: params.password}, function (err, site) {
+      site.updateProperties(params);
+      site.save(function () {
+        self.session.set('site', site);
+        geddy.site = site;
+        self.redirect('/dashboard');
+      });
+    });
+  }
+
 };
 
 exports.Dashboards = Dashboards;

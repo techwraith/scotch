@@ -1,0 +1,23 @@
+<form  class="install" action="/dashboard/save" method="post">
+  <h2>Change Scotch Settings</h2>
+
+  <label for="title" class="control-label">Blog Title</label>
+  <%- contentTag('input', site.title, {type:'text', name:'title'}) %>
+
+  <label for="twitter" class="control-label">Twitter Handle</label>
+  <%- contentTag('input', site.twitter, {type:'text', name:'twitter'}) %>
+
+  <label for="firstName" class="control-label">First Name</label>
+  <%- contentTag('input', site.firstName, {type:'text', name:'firstName'}) %>
+
+  <label for="lastName" class="control-label">Last Name</label>
+  <%- contentTag('input', site.lastName, {type:'text', name:'lastName'}) %>
+
+  <label for="email" class="control-label">email</label>
+  <%- contentTag('input', site.email, {type:'text', name:'email'}) %>
+
+  <label for="password" class="control-label">Password</label>
+  <%- contentTag('input', site.password, {type:'password', name:'password'}) %>
+
+  <%- contentTag('input', 'save', {type: 'submit', class: 'btn'}) %>
+</form>

@@ -5,6 +5,8 @@ router.get(    '/dashboard')              .to('Dashboards.main');
 router.get(    '/dashboard/install')      .to('Dashboards.install');
 router.post(   '/dashboard/finish')       .to('Dashboards.finish');
 router.get(    '/dashboard/analytics')    .to('Dashboards.analytics');
+router.get(    '/dashboard/settings')     .to('Dashboards.settings');
+router.post(   '/dashboard/save')         .to('Dashboards.saveSettings');
 
 // LOGIN
 router.get(    '/dashboard/login')        .to('Dashboards.login');
@@ -20,7 +22,7 @@ router.del(    '/dashboard/post/:id')     .to('Posts.remove');
 
 // PUBLIC POSTS
 router.get(    '/posts.json')             .to('Posts.list');
-router.get(    '/:slug(.:format)')                  .to('Posts.show');
+router.get(    '/:slug(.:format)')        .to('Posts.show');
 router.get(    '/')                       .to('Main.index');
 
 exports.router = router;
