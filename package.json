@@ -15,7 +15,7 @@
     "marked": "~0.2.x",
     "mongodb-wrapper": "~0.4.x",
     "slugs": "~0.1.x",
-    "geddy": "~0.8.x",
+    "geddy": "~0.9.x",
     "commander": "~1.2.0",
     "utilities": "0.0.26",
     "request": "~2.21.0",
