@@ -7,12 +7,14 @@ var program = require('commander')
   , _ = require('underscore')
   , request = require('request')
   , envoy = require('envoy')
+  , kitten = require('kitten')
   , fs = require('fs');
 
 program
   .option('create <name>', 'create a new directory (<name>) and generate a new Scotch site in it.')
   .option('serve [port]', 'start the server, defaults to 80', 80)
   .option('generate', 'generate a static html site')
+  .option('import [folder]', 'import markdown files from folder')
   .option('deploy', 'deploys a generated site')
   .option('upgrade', 'upgrades a site\'s database')
   .parse(process.argv);
@@ -62,6 +64,63 @@ var Controller = function () {
                   .pipe(fs.createWriteStream(path.join('static', slug+'.html')))
         })(slugs[i], i);
       }
+    });
+  };
+
+  this['import'] = function (folder) {
+    var chain = []
+      , asyncChain
+      , createPost = function (params, cb) {
+          var post = geddy.model.Post.create(params);
+
+          if(post.isValid()) {
+            post.save(cb);
+          }
+          else {
+            cb(post.errors);
+          }
+        };
+
+    kitten.load(folder, function (err, posts) {
+      if(err) {
+        console.error('failed to import: ' + err);
+        return;
+      }
+
+      geddy.start(
+      {
+        'geddy-root': process.cwd()
+      , 'port': 8080
+      });
+
+      _.each(posts, function (post) {
+        var params = {
+          title: post.title
+        , markdown: post.content
+        , isPublished: post.published
+        , publishedAt: post.date
+        , callback: null
+        };
+
+        if(post.layout === 'post') {
+          chain.push({
+            func: createPost
+          , args: [params]
+          });
+        }
+        else {
+          console.log('ignoring the page ' + post.name + ', set `layout: post` to import');
+        }
+      });
+
+      asyncChain = new utils.async.AsyncChain(chain);
+
+      asyncChain.last = function () {
+        console.log('imported ' + chain.length + ' posts');
+        process.exit(0);
+      }
+
+      asyncChain.run();
     });
   };
 
@@ -164,4 +223,5 @@ if (program.create) return actions.create(program.create);
 if (program.generate) return actions.generate();
 if (program.deploy) return actions.deploy();
 if (program.upgrade) return actions.upgrade();
+if (program['import']) return actions['import'](program['import']);
 if (program.serve) return actions.serve(program.serve);
