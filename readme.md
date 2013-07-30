@@ -18,7 +18,7 @@ Your blog should be up and running on `http://localhost`
 
     $> cd blog
     $> scotch generate
-    
+
 Your you should now have a 'static' directory in your blog's root directory.
 
 Read the [deployment docs](#deployment) on how to configure static site deployment.
@@ -29,12 +29,19 @@ Read the [deployment docs](#deployment) on how to configure static site deployme
 
 
 #### Writing
- 
+
 ![writing in Scotch](https://dl.dropbox.com/u/7982297/scotch_screens/newwrite.png)
 
 #### Reading
 
 ![writing in Scotch](https://dl.dropbox.com/u/7982297/scotch_screens/newread.png)
+
+#### Importing From Octopress
+
+```
+$ cd my-scotch-blog
+$ scotch import ~/Octoblog/source/_posts
+```
 
 #### Deployment
 
@@ -117,6 +124,19 @@ var replacer = function (buffer) {
 exports.index = replacer;
 
 ```
+
+#### Upgrading
+
+A new field was added in ce22e2a for post publishing timestamps.
+
+To upgrade your database:
+
+```
+$ cd my-scotch-blog
+$ scotch upgrade
+```
+
+It is safe to do this multiple times.
 
 ### Things to Do
 
