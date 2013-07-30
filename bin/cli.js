@@ -14,6 +14,7 @@ program
   .option('serve [port]', 'start the server, defaults to 80', 80)
   .option('generate', 'generate a static html site')
   .option('deploy', 'deploys a generated site')
+  .option('upgrade', 'upgrades a site\'s database')
   .parse(process.argv);
 
 var Controller = function () {
@@ -61,6 +62,49 @@ var Controller = function () {
                   .pipe(fs.createWriteStream(path.join('static', slug+'.html')))
         })(slugs[i], i);
       }
+    });
+  };
+
+  /*
+  * As of right now, this will just copy the createdAt field over to
+  * the publishedAt field
+  */
+  this.upgrade = function () {
+
+    console.log('upgrading database to latest version');
+
+    var upgradePost = function (post, cb) {
+          post.publishedAt = post.createdAt;
+
+          post.save(cb);
+        }
+      , chain = []
+      , asyncChain;
+
+    geddy.start(
+    {
+      'geddy-root': process.cwd()
+    , 'port': 8080
+    });
+
+    geddy.model.Post.all(function (err, posts) {
+      _.each(posts, function (post) {
+        chain.push({
+          func: upgradePost
+        , args: [post]
+        , callback: null
+        });
+      });
+
+      asyncChain = new utils.async.AsyncChain(chain);
+
+      asyncChain.last = function () {
+        console.log('upgraded ' + posts.length + ' posts');
+
+        process.exit(0);
+      };
+
+      asyncChain.run();
     });
   };
 
@@ -119,4 +163,5 @@ var actions = new Controller();
 if (program.create) return actions.create(program.create);
 if (program.generate) return actions.generate();
 if (program.deploy) return actions.deploy();
+if (program.upgrade) return actions.upgrade();
 if (program.serve) return actions.serve(program.serve);

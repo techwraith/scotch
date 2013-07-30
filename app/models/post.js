@@ -22,6 +22,7 @@ var Post = function () {
     markdown: {type: 'string'},
     html: {type: 'string'},
     isPublished: {type: 'boolean'},
+    publishedAt: {type: 'datetime'}
   });
 
   this.belongsTo('Site');
@@ -43,6 +44,10 @@ var Post = function () {
       this.isPublished = true;
     }
 
+    if(!this.publishedAt) {
+      this.publishedAt = new Date();
+    }
+
     if (!this.slug) {
       this.slug = geddy.string.sluggerize(this.title);
     }
@@ -53,7 +58,7 @@ var Post = function () {
     return this;
 
   };
-  
+
   /**
   * Post-processes the post HTML using the user's plugins
   * @param {string} scenario - Where the post will be displayed. Could be "index" or "show".
@@ -63,28 +68,28 @@ var Post = function () {
       , formatter
       , i
       , ii;
-    
+
     _.each(geddy.config.plugins.formatters, function(formatterName) {
       formatter = require(formatterName);
-      
+
       if(typeof formatter[scenario] === 'function') {
         buffer = formatter[scenario].apply(this,[buffer]);
       }
     }, this);
-    
+
     return buffer;
   };
-  
+
   /*
   * Use in place of the default toObj
   */
   this.toFormattedObj = function (scenario) {
     var objectified = this.toObj();
-    
+
     if(scenario) {
       objectified.html = this.formatHtml.apply(this,[scenario]);
     }
-    
+
     return objectified;
   };
 };
