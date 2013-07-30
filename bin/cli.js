@@ -173,14 +173,14 @@ var Controller = function () {
       , deployOptsFile = path.join(process.cwd(),'config','deployment')
       , now = (new Date).getTime()
       , elapsed;
-    
+
     //Check if static site has been generated
     if(!fs.existsSync(staticSiteDir)) {
       console.error('no static site detected');
       console.error('generate a static site with `scotch generate`');
       process.exit(1);
     }
-    
+
     try {
       deployOpts = require(deployOptsFile);
     }
@@ -189,18 +189,18 @@ var Controller = function () {
       console.error('see: https://github.com/Techwraith/scotch#deployment');
       process.exit(1);
     }
-    
+
     if(!deployOpts) {
       return;
     }
-    
+
     deployOpts = _.clone(deployOpts);
-    
+
     deployOpts.destination = deployOpts.destination || 'memory';
     deployOpts.opts = deployOpts.opts || {};
-    
+
     console.log('deploying static site using ' + deployOpts.destination);
-    
+
     envoy.deployFolder(staticSiteDir, deployOpts.destination, deployOpts.opts, function (err, log) {
       if(err) {
         console.error('failed to deploy: '+err);
@@ -208,9 +208,9 @@ var Controller = function () {
       }
       else {
         elapsed = (new Date).getTime() - now;
-        
+
         elapsed = Math.round(elapsed/100)/10;
-        
+
         console.log('deployed in ' + log.length + ' operations (' + elapsed + ' sec)');
         process.exit(0);
       }
