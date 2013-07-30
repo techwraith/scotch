@@ -1,7 +1,7 @@
 #Scotch
 ###A really classy, dead simple, markdown based, blogging framework for node.js
 
-[![Build Status](https://travis-ci.org/techwraith/scotch.png?branch=master)](https://travis-ci.org/techwraith/scotch)
+[![Build Status](https://travis-ci.org/Techwraith/scotch.png?branch=master)](https://travis-ci.org/Techwraith/scotch)
 
 To try Scotch for yourself, make sure that you have node, npm, and mongodb installed (and running), then do this:
 
