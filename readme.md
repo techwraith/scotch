@@ -127,7 +127,7 @@ exports.index = replacer;
 
 #### Upgrading
 
-A new field was added in ce22e2a for post publishing timestamps.
+A new field was added in ce22e2a4a804245ad81c8c7a82407e6dd830d287 for post publishing timestamps.
 
 To upgrade your database:
 
