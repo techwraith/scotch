@@ -75,11 +75,11 @@ module.exports = {
 
 #### Plugins
 
-Plugins are installed via npm and enabled via in `app/config/environment.js`.
+Plugins are installed via npm and enabled via in `config/environment.js`.
 
 ```
 /*
-* Sample app/config/environment.js
+* Sample config/environment.js
 * `npm install readmore`
 */
 var config = {
