@@ -10,11 +10,11 @@ var Main = function () {
     //  get the latest post that is not a draft
     //  respond
     var self = this;
-    geddy.model.Post.all({isPublished: true}, {sort: {'createdAt': 'desc'}}, function (err, posts){
+    geddy.model.Post.all({isPublished: true}, {sort: {'publishedAt': 'desc'}}, function (err, posts){
       posts = _.map(posts, function (post, key) {
         return post.toFormattedObj(params.action);
       }, this);
-      
+
       self.respond({post: posts[0], posts: posts}, {
         format: 'html'
       , template: 'app/views/posts/show'
