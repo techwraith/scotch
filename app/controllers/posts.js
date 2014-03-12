@@ -39,7 +39,7 @@ var Posts = function () {
     var self = this
       , current, next, previous;
 
-    geddy.model.Post.all({isPublished: true}, {sort: {'createdAt': 'desc'}}, function (err, posts){
+    geddy.model.Post.all({isPublished: true}, {sort: {'publishedAt': 'desc'}}, function (err, posts){
       current = _.find(posts, function(post){ return post.slug == params.slug});
       if (current) {
         current = current.toFormattedObj(params.action);
@@ -70,6 +70,7 @@ var Posts = function () {
     geddy.model.Post.first({slug: params.slug}, function(err, post) {
       if (params.isPublished!=null && (params.isPublished === true || params.isPublished === 'true')) {
         params.isPublished = true;
+        params.publishedAt = new Date();
       } else {
         params.isPublished = false;
       }
